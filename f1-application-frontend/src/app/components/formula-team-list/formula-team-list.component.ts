@@ -4,6 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
+import { faSignature, faCalendarCheck, faSquarePen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { takeUntil } from 'rxjs';
 import { FormulaTeamData } from 'src/app/data/formula-team-data';
 import { FormulateamService } from 'src/app/services/formulateam/formulateam.service';
@@ -34,6 +35,10 @@ export class FormulaTeamListComponent implements OnInit {
   size:number = 9
   asc:string = "asc"
   sort:string = "name"
+
+
+  faSquarePen = faSquarePen;
+  faTrashCan = faTrashCan;
 
   constructor(private routerService:RouteParamService,
               private userService:UserDetailService,
@@ -104,6 +109,13 @@ export class FormulaTeamListComponent implements OnInit {
     });
   }
 
+  delete(id:number){
+    this.teamService.deleteTeam(id).subscribe({
+      next: (r) => this.successMessage("Successfuly deleted Formula One Team with id: " + id),
+      error: (e) => this.error(e)
+    })
+  }
+
   loadFormulaTeamData(){
     this.teamService.getTeams().subscribe({
       next: (r) => this.success(r),
@@ -117,6 +129,11 @@ export class FormulaTeamListComponent implements OnInit {
     this.size = Number.parseInt(resp.pageable.pageSize)
     this.collectionSize = Number.parseInt(resp.totalElements)
     this.dataSource.data = resp.content
+  }
+
+  successMessage(message:any){
+    this.teamService.snackbarMessage(message)
+    this.loadFormulaTeamData()
   }
 
   error(error:any){

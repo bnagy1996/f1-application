@@ -27,7 +27,8 @@
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef> Actions </th>
                     <td mat-cell *matCellDef="let element">  
-                        <button class="btn btn-secondary btn-block" (click)="edit(element.id)">Edit</button>
+                        <button class="btn btn-secondary" (click)="edit(element.id)" style="margin-left: 1rem;"><fa-icon [icon]="faSquarePen" style="color: white;"></fa-icon></button>
+                        <button class="btn btn-secondary" (click)="delete(element.id)" style="margin-left: 1rem;"><fa-icon [icon]="faTrashCan" style="color: white;"></fa-icon></button>
                     </td>
                   </ng-container>
               
