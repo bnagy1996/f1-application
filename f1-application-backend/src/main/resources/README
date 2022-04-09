@@ -1,0 +1,7 @@
+Windows:
+    Database presitance location:
+        C:\data\f1test
+    H2-console JDBC URL:
+        jdbc:h2:C:\data\f1test
+    Console url:
+        http://localhost:8090/app/h2-console

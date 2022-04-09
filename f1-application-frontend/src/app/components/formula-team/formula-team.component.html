@@ -1,0 +1,76 @@
+<div class="main-container">
+    <form [formGroup]="team" (ngSubmit)="onSubmit()" style="position: relative;">
+        <mat-dialog-content class="mat-typography" style="position: absolute;width: 100%;">
+            <h4 *ngIf="!data" class="card-title detail-title">Add New Formula Team</h4>
+            <h4 *ngIf="data" class="card-title detail-title">Editing Formula Team (id: {{data.id}})</h4>
+                <label>Name of the Formula Team:</label>
+                <div class="input-group login-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text prepend-icon-for-input"><fa-icon [icon]="faSignature" style="color: #214a80;"></fa-icon></span>
+                    </div>
+                    <input class="form-control login-controls" formControlName="name" type="text" placeholder="Team name..">
+                </div>    
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+        
+                    <div *ngIf="name?.errors?.['required']">
+                        Username is required.
+                    </div>
+                    <div *ngIf="name?.errors?.['minlength']">
+                        Username must be at least 4 characters long.
+                    </div>
+                </div>
+                
+                <label>Foundation Date ({{foundationDate!.value?foundationDate!.value:''}}):</label>
+                <div class="input-group login-group">
+                    <dl-date-time-picker formControlName="foundationDate" style="width: 100%;"
+                        maxView="year" 
+                        minView="year" 
+                        startView="year" 
+                        [selectFilter]="datePickerFilter">
+                    </dl-date-time-picker>
+                </div>  
+                <div *ngIf="foundationDate?.invalid && (foundationDate?.dirty || foundationDate?.touched)" class="alert alert-danger">
+        
+                    <div *ngIf="foundationDate?.errors?.['required']">
+                        Foundation Date is required.
+                    </div>
+                </div>
+                
+
+                <label>Number Of Constructor Wins:</label>
+                <div class="input-group login-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text prepend-icon-for-input"><fa-icon [icon]="faTrophy" style="color: #214a80;"></fa-icon></span>
+                    </div>
+                    <input class="form-control login-controls" formControlName="numberOfConstructorWins" type="number" min="0" placeholder="Wins..">
+                </div>  
+                <div *ngIf="numberOfConstructorWins?.invalid && (numberOfConstructorWins?.dirty || numberOfConstructorWins?.touched)" class="alert alert-danger">
+        
+                    <div *ngIf="numberOfConstructorWins?.errors?.['required']">
+                        Number Of Constructor Wins is required.
+                    </div>
+                    <div *ngIf="numberOfConstructorWins?.errors?.['min']">
+                        Cannot be negative.
+                    </div>
+                </div>
+
+                <label>Is Payment Due:</label>
+                <div class="input-group login-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text prepend-icon-for-input"><fa-icon [icon]="faCreditCard" style="color: #214a80;"></fa-icon></span>
+                    </div>
+                    <div style="margin-left: 3px; width: 2.4rem;">
+                        <input class="form-control login-controls" formControlName="isPaymentDue" type="checkbox" placeholder="">
+                    </div>
+                </div>  
+
+            
+        </mat-dialog-content>
+        <mat-dialog-actions style="position: absolute;bottom: -36rem;width: 100%;">
+            <div style="display: flex;justify-content: flex-end;width: 100%">
+                <button mat-dialog-close class="btn btn-secondary mat-action-button">Cancel</button>
+                <button mat-button cdkFocusInitial class="btn btn-primary mat-action-button" type="submit" >Submit</button>
+            </div>
+        </mat-dialog-actions>
+    </form>
+</div>

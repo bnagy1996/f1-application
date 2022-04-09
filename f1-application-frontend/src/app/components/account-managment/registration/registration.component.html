@@ -1,0 +1,80 @@
+<section class="login-dark">
+    <form [formGroup]="registration" (ngSubmit)="onSubmit()">
+        <div class="illustration">
+            <fa-icon [icon]="faUserTie" style="color: #214a80;"></fa-icon>
+        </div>
+        <div class="input-group login-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text prepend-icon-for-input"><i class="fa fa-user"></i></span>
+            </div>
+            <input class="form-control login-controls" formControlName="username" type="text" placeholder="Username..">
+        </div>    
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
+
+            <div *ngIf="username?.errors?.['required']">
+                Username is required.
+            </div>
+            <div *ngIf="username?.errors?.['minlength']">
+                Username must be at least 4 characters long.
+            </div>
+        </div> 
+
+        <div class="input-group login-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text prepend-icon-for-input"><i class="fa fa-envelope"></i></span>
+            </div>
+            <input class="form-control login-controls" formControlName="email" type="email" placeholder="Username..">
+        </div> 
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+
+            <div *ngIf="email?.errors?.['required']">
+                Email is required.
+            </div>
+            <div *ngIf="email?.errors?.['email']">
+                Must be a valid email.
+            </div>
+        </div>
+
+        <div class="input-group login-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text prepend-icon-for-input"><i class="fa fa-lock"></i></span>
+            </div>
+            <input class="form-control login-controls" formControlName="password" type="password" placeholder="Password..">
+        </div>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
+
+            <div *ngIf="password?.errors?.['required']">
+                Password is required.
+            </div>
+            <div *ngIf="password?.errors?.['minlength']">
+                Password must be at least 4 characters long.
+            </div>
+            <div *ngIf="passwordAgain?.errors?.['valueMismatch']">
+                Password and password confirmation must match!
+            </div>
+        </div>
+
+        <div class="input-group login-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text prepend-icon-for-input"><i class="fa fa-lock"></i></span>
+            </div>
+            <input class="form-control login-controls" formControlName="passwordAgain" type="password" placeholder="Password Again..">
+        </div>
+        <div *ngIf="passwordAgain?.invalid && (passwordAgain?.dirty || passwordAgain?.touched)" class="alert alert-danger">
+
+            <div *ngIf="passwordAgain?.errors?.['required']">
+                Password Again is required.
+            </div>
+            <div *ngIf="passwordAgain?.errors?.['minlength']">
+                Password Again must be at least 4 characters long.
+            </div>
+            <div *ngIf="passwordAgain?.errors?.['valueMismatch']">
+                Password and password confirmation must match!
+            </div>
+        </div>
+
+        <div class="input-group d-flex justify-content-center" style="margin-top: 2rem;">
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
+        </div>
+    </form>
+</section>

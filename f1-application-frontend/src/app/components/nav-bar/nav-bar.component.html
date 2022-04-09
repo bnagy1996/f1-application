@@ -1,0 +1,41 @@
+<div class="header-dark" style="padding-bottom: 0px;">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg navigation-clean-search" style="min-height: 5rem;">
+        <div class="container">
+            <div class="navbar-brand-container">
+                <a class="navbar-brand">Formula One</a>
+                <button data-toggle="collapse" class="navbar-toggler collapsed" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav" style="width: 100%;">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/formulateams"
+                        [queryParams]="{ 
+                            page: 0,
+                            size: 9,
+                            sort: 'name',
+                            asc: 'asc' }">Formula Teams</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" *ngIf="authenticated()" (click)="addTeam()" type="submit">Add New Team</a>
+                    </li>
+
+                </ul>
+                
+                <div class="right-panel">
+                    <div class="btn btn-secondary action-button" routerLink="/login" type="button">Login</div>
+                    <div class="btn btn-primary action-button" role="button" routerLink="/registration">Sign up</div>
+                      
+                    <div class="dropdown dropleft" id="dropdown-menu-icon" *ngIf="authenticated()">
+                        <a aria-expanded="false" data-toggle="dropdown" href="#" style="margin-left: 10px;"><i class="fa fa-gear"></i></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="/details"><i class="fa fa-user" style="margin-right: 0.5rem;"></i>Profile</a>
+                            <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out" style="margin-right: 0.5rem;"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

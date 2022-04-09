@@ -1,0 +1,14 @@
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 100%;
+}
+
+.outer-pagination{
+  display: block;
+  width: 100%;
+
+  .inner-pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+} 

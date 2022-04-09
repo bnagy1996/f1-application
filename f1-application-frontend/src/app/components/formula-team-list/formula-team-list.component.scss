@@ -1,0 +1,27 @@
+.main-container{
+    background-color: aliceblue;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 100%;
+
+    .main-content{
+        width: 50rem;
+        background-color: #454d55;
+        height: 40rem;
+        box-shadow: 10px 5px 5px grey;
+        border-radius: 1rem;
+
+        .detail-title{
+            text-align: center;
+            color: white;
+        }
+    }
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 2rem;
+  }

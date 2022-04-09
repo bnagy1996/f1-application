@@ -1,0 +1,12 @@
+INSERT INTO app_user (id, email, enabled, password, role, username) VALUES (1,'f1user@f1user.com',TRUE,'$2a$10$Q6HNzHLJI/eK1SbxRfx5xuFs5H4wmsIgt3BoNd0AI7GwyMw5meNBS',1,'f1user');
+INSERT INTO app_user (id, email, enabled, password, role, username) VALUES (2,'admin@admin.com',TRUE,'$2a$10$l5.DPh9DPTexFxWYNSSHSOIlxD1wTmlTQztWomlgPy2tzYxiTlp8m',2,'admin');
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(1, '2020-12-31 23:00:00', false,'Ferrari', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(2, '2020-12-31 23:00:00', false,'Red Bull Racing', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(3, '2020-12-31 23:00:00', false,'Mercedes', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(4, '2020-12-31 23:00:00', false,'Alpine', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(5, '2020-12-31 23:00:00', false,'Haas', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(6, '2020-12-31 23:00:00', false,'Alfa Romeo', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(7, '2020-12-31 23:00:00', false,'AlphaTauri', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(8, '2020-12-31 23:00:00', false,'McLaren', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(9, '2020-12-31 23:00:00', false,'Aston Martin', 5);
+INSERT INTO formula_team(id, foundation_date, is_payment_due, name, number_of_constructor_wins) VALUES(10, null, false,'Williams', 5);

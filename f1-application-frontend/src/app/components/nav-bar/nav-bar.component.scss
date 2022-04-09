@@ -1,0 +1,137 @@
+.header-dark {
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 950;
+    }
+    
+    .navbar {
+      background: #282d32;
+      color: #fff;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      position: fixed;
+      padding: 0;
+
+
+      @media (max-width: 576px){
+        .navbar-brand-container{
+          width: 100%;
+          .navbar-brand {
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+
+      .navbar-brand-container{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+        .navbar-brand {
+          font-weight: bold;
+          font-size: 1.7rem;
+          color: inherit;
+        }
+
+  
+        .navbar-toggler {
+          color: #eee;
+          border-color: #747474;
+          position: absolute;
+          right: 1rem;
+          top: 0rem;
+          transition: top 100ms;
+        }
+
+        .navbar-toggler.collapsed{
+          top: 1rem;
+          transition: top 100ms;
+          transition-delay: 120ms;
+        }
+   
+      }
+
+      
+      .right-panel{
+        display: flex;
+        align-items: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        .action-button {
+          height: 2rem;
+          min-width: 6rem;
+          margin-left: 1rem;
+          border-radius: 20px;
+          font-size: inherit;
+          color: #fff;
+          box-shadow: none;
+          border: none;
+          text-shadow: none;
+          transition: background-color 0.25s;
+        }
+      }
+
+      @media (max-width: 576px){
+        .right-panel{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: .5rem;
+          padding-bottom: 1.5rem;
+          width: 100%;
+        }
+      }
+    }
+
+    
+
+
+    @media (max-width: 576px){
+      .nav-link {
+        text-align: center;
+      }
+    }
+
+
+    //Rightside dropdown
+    @media (max-width: 992px){
+      #dropdown-menu-icon{
+        position: absolute;
+        right: 2rem;
+      }
+    }
+
+    @media (max-width: 992px){
+      #dropdown-language-icon{
+        position: absolute;
+        right: 2rem;
+      }
+    }
+
+
+
+    .dropleft{
+      font-size: 2rem;
+      .dropdown-menu{
+        top: 3rem;
+        right: -1rem;
+        margin-top: 0;
+        margin-right: .125rem;
+      }
+
+      .dropdown-item.active, .dropdown-item:active {
+        color: #212529;
+        text-decoration: none;
+        background-color: white;
+      }
+    } 
+
+
+    
+  }
+
